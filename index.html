@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Aroma - Encomendas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header>
+        <div class="logo">
+            <h1>☕ Café Aroma</h1>
+        </div>
+        <div class="menu-toggle" id="menuToggle" onclick="toggleMenuMobile()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#" onclick="mostrarPagina('home'); return false;" class="nav-link active" id="link-home">Início</a></li>
+                <li><a href="#" onclick="mostrarPagina('sobre'); return false;" class="nav-link" id="link-sobre">Sobre Nós</a></li>
+                <li><a href="#" onclick="mostrarPagina('menu'); return false;" class="nav-link" id="link-menu">Menu</a></li>
+                <li><a href="#" onclick="mostrarPagina('contactos'); return false;" class="nav-link" id="link-contactos">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ==================== PÁGINA INÍCIO ==================== -->
+        <section id="home" class="pagina ativa">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Bem-vindo ao Café Aroma</h2>
+                    <p>Onde cada xícara conta uma história de sabor e paixão</p>
+                    <button class="btn-primary" onclick="mostrarPagina('menu')">Fazer Encomenda</button>
+                </div>
+            </div>
+
+            <div class="destaques">
+                <h2>Porquê escolher-nos?</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <i class="fas fa-coffee"></i>
+                        <h3>Café Premium</h3>
+                        <p>Grãos selecionados das melhores plantações do mundo</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-bread-slice"></i>
+                        <h3>Padaria Fresca</h3>
+                        <p>Pães e bolos frescos todos os dias</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Pagamento Fácil</h3>
+                        <p>Encomende online e pague com cartão</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="estatisticas">
+                <div class="stat">
+                    <span class="numero" data-target="5000">0</span>
+                    <p>Clientes Satisfeitos</p>
+                </div>
+                <div class="stat">
+                    <span class="numero" data-target="15">0</span>
+                    <p>Anos de Experiência</p>
+                </div>
+                <div class="stat">
+                    <span class="numero" data-target="50">0</span>
+                    <p>Tipos de Café</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA SOBRE NÓS ==================== -->
+        <section id="sobre" class="pagina">
+            <div class="sobre-secao">
+                <h2>A Nossa História</h2>
+                <div class="sobre-container">
+                    <div class="sobre-imagem">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600" alt="Interior">
+                    </div>
+                    <div class="sobre-texto">
+                        <p>Fundado em 2009, o Café Aroma nasceu da paixão por café de qualidade e do desejo de criar um espaço onde as pessoas pudessem desfrutar de momentos especiais.</p>
+                        <p>Começámos como uma pequena cafeteria de bairro e hoje somos referência na cidade, mantendo sempre a nossa essência: café artesanal de excelência num ambiente acolhedor.</p>
+                        <p>O nosso compromisso é servir cada xícara com dedicação, utilizando grãos 100% arábica e métodos de preparo tradicionais que realçam o sabor autêntico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="equipa">
+                <h2>A Nossa Equipa</h2>
+                <div class="equipa-container">
+                    <div class="membro">
+                        <img src="https://images.unsplash.com/photo-1583336130517-6666939d7e3a?w=300" alt="Ana">
+                        <h3>Ana Silva</h3>
+                        <p>Barista Chefe</p>
+                    </div>
+                    <div class="membro">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300" alt="Carlos">
+                        <h3>Carlos Mendes</h3>
+                        <p>Gerente</p>
+                    </div>
+                    <div class="membro">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300" alt="Maria">
+                        <h3>Maria Santos</h3>
+                        <p>Padeira Mestre</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="valores">
+                <h2>Os Nossos Valores</h2>
+                <div class="valores-container">
+                    <div class="valor">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustentabilidade</h3>
+                        <p>Compromisso com práticas ecológicas e comércio justo</p>
+                    </div>
+                    <div class="valor">
+                        <i class="fas fa-heart"></i>
+                        <h3>Paixão</h3>
+                        <p>Amor pelo que fazemos em cada detalhe</p>
+                    </div>
+                    <div class="valor">
+                        <i class="fas fa-users"></i>
+                        <h3>Comunidade</h3>
+                        <p>Espaço de encontro e partilha</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA MENU ==================== -->
+        <section id="menu" class="pagina">
+            <div class="menu-secao">
+                <h2>O Nosso Menu</h2>
+                <p class="menu-subtitulo">Selecione os produtos para a sua encomenda</p>
+                
+                <div class="menu-filtros">
+                    <button class="filtro-btn active" onclick="filtrarMenu('todos')">Todos</button>
+                    <button class="filtro-btn" onclick="filtrarMenu('cafes')">Cafés</button>
+                    <button class="filtro-btn" onclick="filtrarMenu('bolos')">Bolos</button>
+                    <button class="filtro-btn" onclick="filtrarMenu('sandes')">Sandes</button>
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+                    <!-- CAFÉS -->
+                    <div class="produto" data-categoria="cafes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" alt="Expresso">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Expresso</h3>
+                            <p>Café concentrado e intenso</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">1,50€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Expresso', 1.50)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="cafes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400" alt="Cappuccino">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Cappuccino</h3>
+                            <p>Expresso com leite vaporizado</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">2,80€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Cappuccino', 2.80)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="cafes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Latte">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Latte</h3>
+                            <p>Café suave com leite vaporizado</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">3,00€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Latte', 3.00)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="cafes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=400" alt="Americano">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Americano</h3>
+                            <p>Expresso diluído com água quente</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">2,00€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Americano', 2.00)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BOLOS -->
+                    <div class="produto" data-categoria="bolos">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Bolo Chocolate">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Bolo de Chocolate</h3>
+                            <p>Caseiro, húmido e irresistível</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">3,50€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Bolo de Chocolate', 3.50)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="bolos">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Croissant">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Croissant</h3>
+                            <p>Folhado amanteigado tradicional</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">2,00€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Croissant', 2.00)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="bolos">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Cheesecake">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Cheesecake</h3>
+                            <p>Cremosa com frutos vermelhos</p> 
+                            <div class="produto-preco-acao">
+                                <span class="preco">4,00€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Cheesecake', 4.00)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="bolos">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=400" alt="Muffin">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Muffin de Blueberry</h3>
+                            <p>Recheado com mirtilos frescos</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">2,50€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Muffin de Blueberry', 2.50)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SANDES -->
+                    <div class="produto" data-categoria="sandes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1554433607-66b5efe9d304?w=400" alt="Sande Presunto">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Sandes de Presunto</h3>
+                            <p>Presunto curado com queijo</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">5,50€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Sandes de Presunto', 5.50)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="sandes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1540713434306-58505cf1b6fc?w=400" alt="Sande Vegetariana">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Sande Vegetariana</h3>
+                            <p>Queijo de cabra e tomate</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">5,00€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Sande Vegetariana', 5.00)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="sandes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" alt="Tosta Mista">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Tosta Mista</h3>
+                            <p>Queijo e fiambre quentinhos</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">4,00€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Tosta Mista', 4.00)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="produto" data-categoria="sandes">
+                        <div class="produto-imagem">
+                            <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400" alt="Wrap">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Wrap de Frango</h3>
+                            <p>Com molho especial</p>
+                            <div class="produto-preco-acao">
+                                <span class="preco">6,00€</span>
+                                <button class="btn-add" onclick="adicionarEncomenda('Wrap de Frango', 6.00)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão Ver Encomenda -->
+                <div class="menu-encomenda-btn">
+                    <button class="btn-encomenda-grande" onclick="mostrarPagina('encomenda')">
+                        <i class="fas fa-clipboard-list"></i>
+                        Ver Encomenda (<span id="menuContador">0</span> itens)
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA CONTACTOS ==================== -->
+        <section id="contactos" class="pagina">
+            <div class="contactos-secao">
+                <h2>Contacte-nos</h2>
+                
+                <div class="contactos-container">
+                    <div class="contactos-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Morada</h3>
+                                <p>Rua dos Sabores, 123<br>1000-001 Lisboa</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Telefone</h3>
+                                <p>+351 939280306</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>18639@aejactavira.pt</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Horário</h3>
+                                <p>Seg-Sex: 07:00 - 20:00<br>Sáb-Dom: 08:00 - 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="formulario-container">
+                        <h3>Envie-nos uma mensagem</h3>
+                        <form id="contactoForm" onsubmit="enviarContacto(event)">
+                            <div class="form-grupo">
+                                <label for="nome">Nome *</label>
+                                <input type="text" id="nome" required>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="mensagem">Mensagem *</label>
+                                <textarea id="mensagem" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.9!2d-9.1393!3d38.7223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19331a61e4f33b%3A0x400ebbde49036d0!2sLisboa!5e0!3m2!1spt-PT!2spt!4v1234567890" 
+                            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA ENCOMENDA ==================== -->
+        <section id="encomenda" class="pagina">
+            <div class="encomenda-secao">
+                <h2>📝 Sua Encomenda</h2>
+                
+                <!-- Passo 1: Itens -->
+                <div class="encomenda-passo" id="passo1">
+                    <h3><span class="passo-num">1</span> Itens Selecionados</h3>
+                    
+                    <div class="encomenda-vazio" id="encomendaVazio">
+                        <i class="fas fa-shopping-basket"></i>
+                        <p>Nenhum item selecionado</p>
+                        <button class="btn-primary" onclick="mostrarPagina('menu')">Ir para o Menu</button>
+                    </div>
+
+                    <div class="encomenda-itens" id="encomendaItens" style="display: none;">
+                        <!-- Itens via JS -->
+                    </div>
+
+                    <div class="encomenda-subtotal" id="encomendaSubtotal" style="display: none;">
+                        <span>Subtotal:</span>
+                        <span id="valorSubtotal">0,00€</span>
+                    </div>
+                </div>
+
+                <!-- Passo 2: Dados Pessoais -->
+                <div class="encomenda-passo" id="passo2" style="display: none;">
+                    <h3><span class="passo-num">2</span> Dados Pessoais</h3>
+                    
+                    <form class="encomenda-form" id="formDados">
+                        <div class="form-linha">
+                            <div class="form-grupo">
+                                <label for="encomendaNome">Nome Completo *</label>
+                                <input type="text" id="encomendaNome" placeholder="Seu nome completo" required>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="encomendaEmail">Email *</label>
+                                <input type="email" id="encomendaEmail" placeholder="18639@aejactavira.pt" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-linha">
+                            <div class="form-grupo">
+                                <label for="encomendaTelefone">Telefone / Contacto *</label>
+                                <input type="tel" id="encomendaTelefone" placeholder="+351 912 345 678" required>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="encomendaNIF">NIF (opcional)</label>
+                                <input type="text" id="encomendaNIF" placeholder="123456789" maxlength="9">
+                            </div>
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="encomendaObs">Observações (opcional)</label>
+                            <textarea id="encomendaObs" rows="3" placeholder="Alguma observação especial..."></textarea>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Passo 3: Pagamento -->
+                <div class="encomenda-passo" id="passo3" style="display: none;">
+                    <h3><span class="passo-num">3</span> Dados do Cartão</h3>
+                    
+                    <form class="encomenda-form" id="formPagamento">
+                        <div class="cartao-preview">
+                            <div class="cartao-frente">
+                                <div class="cartao-chip"><i class="fas fa-microchip"></i></div>
+                                <div class="cartao-numero" id="cartaoNumeroPreview">**** **** **** ****</div>
+                                <div class="cartao-detalhes">
+                                    <div class="cartao-titular" id="cartaoTitularPreview">NOME DO TITULAR</div>
+                                    <div class="cartao-validade" id="cartaoValidadePreview">MM/AA</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="cartaoNumero">Número do Cartão *</label>
+                            <input type="text" id="cartaoNumero" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                        </div>
+
+                        <div class="form-linha">
+                            <div class="form-grupo">
+                                <label for="cartaoValidade">Validade *</label>
+                                <input type="text" id="cartaoValidade" placeholder="MM/AA" maxlength="5" required>
+                            </div>
+                            <div class="form-grupo">
+                                <label for="cartaoCVV">CVV *</label>
+                                <input type="text" id="cartaoCVV" placeholder="123" maxlength="3" required>
+                            </div>
+                        </div>
+
+                        <div class="form-grupo">
+                            <label for="cartaoTitular">Nome do Titular *</label>
+                            <input type="text" id="cartaoTitular" placeholder="Como aparece no cartão" required>
+                        </div>
+                    </form>
+
+                    <div class="encomenda-total-final">
+                        <span>Total a Pagar:</span>
+                        <span id="valorTotalFinal">0,00€</span>
+                    </div>
+                </div>
+
+                <!-- Botões -->
+                <div class="encomenda-botoes" id="encomendaBotoes" style="display: none;">
+                    <button class="btn-voltar" id="btnVoltar" onclick="passoAnterior()" style="display: none;">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                    <button class="btn-avancar" id="btnAvancar" onclick="proximoPasso()">
+                        Avançar <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PÁGINA CONFIRMAÇÃO ==================== -->
+        <section id="confirmacao" class="pagina">
+            <div class="confirmacao-secao">
+                <div class="confirmacao-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Encomenda Confirmada!</h2>
+                <p class="confirmacao-numero">Nº da Encomenda: <span id="numeroEncomenda">001</span></p>
+                
+                <div class="confirmacao-detalhes" id="confirmacaoDetalhes">
+                    <!-- Via JS -->
+                </div>
+
+                <div class="confirmacao-info">
+                    <p><i class="fas fa-envelope"></i> Recebeu um email de confirmação</p>
+                    <p><i class="fas fa-clock"></i> Preparação: 10-15 minutos</p>
+                    <p><i class="fas fa-phone"></i> Contactamos quando estiver pronto</p>
+                </div>
+
+                <button class="btn-primary" onclick="novaEncomenda()">Fazer Nova Encomenda</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>Café Aroma</h4>
+                <p>Rua dos Sabores, 123<br>1000-001 Lisboa</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Café Aroma. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- NOTIFICAÇÃO -->
+    <div class="notificacao" id="notificacao">
+        <i class="fas fa-check"></i>
+        <span id="notificacaoTexto">Item adicionado!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
